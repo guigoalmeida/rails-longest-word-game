@@ -1,0 +1,23 @@
+<div class="container">
+
+
+<h1> Results</h1>
+
+<h3> The word you typed was: </h3>
+<h4> <%= @word%> </h4>
+
+<% if @english_word == false %>
+  <%= "The word #{@word.upcase} does not belong to the English language!" %>
+<% elsif @included == false%>
+  <%= "You cannot compose the word #{@word.upcase} with the letters #{@letters.join(", ")}" %>
+<% else %>
+  <%= "Congratulations! you found a word! #{@word.upcase} works!"%>
+  <br>
+  <%= "Your took #{@time}!"%>
+  <br>
+  <%= "Your score was #{@score}!"%>
+<% end %>
+
+<br>
+<%= link_to "Play again", new_path %>
+</div>
